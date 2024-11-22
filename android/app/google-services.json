@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "526385956663",
+    "project_id": "application-de-notes-de-cours",
+    "storage_bucket": "application-de-notes-de-cours.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:526385956663:android:a889c8162447506527bcb2",
+        "android_client_info": {
+          "package_name": "com.example.notes_de_cours"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYnK85HAwr8lgGQW3S8CDZfKlhpLtIrXk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

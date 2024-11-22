@@ -1,0 +1,61 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin"
+    id 'com.google.gms.google-services'  // Cette ligne est bien placée
+}
+
+dependencies {
+    // Import Firebase BoM
+    implementation platform('com.google.firebase:firebase-bom:33.5.1')
+    implementation('com.google.firebase:firebase-firestore:25.1.1')
+
+    // Firebase Analytics
+    implementation 'com.google.firebase:firebase-analytics'
+
+    // Ajoutez la dépendance legacy-support dans le fichier app/build.gradle
+    implementation 'androidx.legacy:legacy-support-v13:1.0.0'
+
+
+    // Ajoutez d'autres dépendances Firebase si nécessaire, par exemple :
+    // implementation 'com.google.firebase:firebase-auth' si vous utilisez l'authentification Firebase
+}
+
+android {
+    namespace = "com.example.notes_de_cours"
+    compileSdk = flutter.compileSdkVersion
+    ndkVersion = flutter.ndkVersion
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        applicationId = "com.example.notes_de_cours"
+        minSdk = 23
+        targetSdk = flutter.targetSdkVersion
+        versionCode = flutter.versionCode
+        versionName = flutter.versionName
+        lintOptions {
+            checkReleaseBuilds false
+            abortOnError false
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig = signingConfigs.debug
+        }
+    }
+}
+
+flutter {
+    source = "../.."
+}
+
+apply plugin: 'com.google.gms.google-services'  // Gardez cette ligne à la fin du fichier
